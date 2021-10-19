@@ -1,17 +1,22 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+array_char = ['а', 'б', 'в', 'г', 'д', 'е', 'е', 'ж', 'з', 'и', 'й',
+              'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф',
+              'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
 
 
-# Press the green button in the gutter to run the script.
+def get_number_char(char):
+    for idx in range(len(array_char)):
+        if char == array_char[idx]:
+            return idx+1
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm'+str(int('1')))
+    inputText = input("Введите предложение: ")
 
+    inputText = inputText.lower()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sumResult = 0
+
+    for ch in inputText:
+        sumResult += get_number_char(ch)
+
+    print(str(sumResult))
